@@ -3,6 +3,9 @@ plugins {
     id 'kotlin-android'
 }
 
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+
 android {
     compileSdk 31
 
@@ -22,6 +25,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures{
+        viewBinding=true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -29,6 +37,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+}
+
+realm {
+    syncEnabled = true
 }
 
 dependencies {
