@@ -16,8 +16,7 @@ lateinit var create_Button:Button
         create_Button.setOnClickListener{
             val cls2 = Person("kashir",16)
             cls2.create("kashir",16)
-            val intent= Intent(this,Person::class.java)
-            startActivity(intent)
+
         }
     }
 }
